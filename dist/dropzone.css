@@ -1,0 +1,43 @@
+
+.closest-dropzone {
+    background-color: #EDEDED;
+    border-style: solid;
+    border-color: #A6B4C5;
+    border-width: 1px;
+  }
+  
+  .closest-dropzone:hover {
+    background-color: #DADFE3;
+    box-shadow: inset 0 0 2px #1A1A1A;
+    border-color: #3598DC;
+  }
+  
+  .closest-dropzone:hover > span {
+    color: white;
+    text-shadow: 0 0 2px #1A1A1A;
+  }
+  
+  .dropzone-upload {
+    background-color: #78C6D3 !important;
+    box-shadow: inset 0 0 2px #6F726D !important;
+    border-color: #3598DC !important;
+  }
+  
+  .dropzone-upload > span { text-shadow: 0 0 2px #1A1A1A !important; }
+  
+  .closest-dropzone > span { color: #A6B4AD; }
+  .closest-dropzone{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .dz-progress{
+      width: 0px;
+      background: #3f6ad8;
+      transition: ease all .5s;
+  }
+  .dz-progressbar{
+    height: 5px;
+    width: 100%;
+    /* background: red; */
+  }
