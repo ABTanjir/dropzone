@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ABTanjir/dropzone.js.git"
+        "url": "git+https://github.com/ABTanjir/dropzone.git"
     },
     "keywords": [
         "dropzone"
@@ -16,7 +16,7 @@
     "author": "ABTanjir",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ABTanjir/dropzone.js/issues"
+        "url": "https://github.com/ABTanjir/dropzone.git/issues"
     },
-    "homepage": "https://github.com/ABTanjir/dropzone.js#readme"
+    "homepage": "https://github.com/ABTanjir/dropzone.git#readme"
 }
