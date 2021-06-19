@@ -34,7 +34,7 @@
             StylingDropZone();
             EventsDropZone();
         };
-        
+
 
         function toDataUrl(url, callback) {
             if (!url) return false;
@@ -50,7 +50,7 @@
             xhr.responseType = 'blob';
             xhr.send();
         }
-        /* 
+        /*
             Privates
         */
         function StylingDropZone() {
@@ -86,7 +86,7 @@
                 '-o-transition': 'all 0.3s ease-out',
                 'transition': 'all 0.3s ease-out'
             });
-                
+
 
             plugin.input.css({
                 'z-index': plugin.options.zIndex + 1,
@@ -121,7 +121,7 @@
             });
             // IE Legacy need to add events ! :(
             Browser();
-            
+
             if (plugin.browser.msie && parseInt(plugin.browser.version, 10) < 10) {
                 plugin.input.on({
                     drop: drop
@@ -161,7 +161,11 @@
         }
 
         function start_upload(file_reader) {
-            var form_data = new FormData();    
+            var form_data = new FormData();
+            var _token = $(this).attr('_token');
+            if(typeof _token !== 'undefined' && _token !== false){
+                form_data.append('_token', _token);
+            }
             form_data.append('file', file_reader);
             plugin.closestDiv.find('.dz-progress').css({
                 'background-color': '#3f6ad8',
@@ -173,7 +177,7 @@
                 processData: false,
                 contentType: false,
                 type: 'POST',
-                mimeType:"multipart/form-data",                    
+                mimeType:"multipart/form-data",
                 cache: false,
                 xhr: function(){
                     var xhr = new window.XMLHttpRequest();
@@ -181,7 +185,7 @@
                     xhr.upload.addEventListener("progress", function(evt){
                         if (evt.lengthComputable) {
                             var percentComplete = evt.loaded / evt.total;
-                            
+
                             plugin.closestDiv.find('.dz-progress').css({
                                 'height': '100%',
                                 'width': Math.round(percentComplete*100) + "%",
@@ -201,7 +205,7 @@
                     })
                 }
             })
-	        
+
         }
 
         function dropOrChange(event) {
@@ -225,7 +229,7 @@
                         .css({'color': 'white'})
                         .html('');
                 }
-                
+
                 start_upload(file);
 
                 if(plugin.options.previewImages) {
@@ -234,7 +238,7 @@
                         var reader = new FileReader();
                         reader.onload = function(event){
                             plugin.closestDiv.data('previouscss', plugin.closestDiv.css('background-image')+ ';'+ plugin.closestDiv.css('background-color'));
-    
+
                             plugin.closestDiv.css({
                                 'background-image': 'url(' + event.target.result + ')'
                             });
@@ -266,7 +270,7 @@
 
             plugin.closestDiv.addClass('dropzone-upload');
         }
-        
+
         function dragExit(event) {
             killHandler(event);
 
@@ -278,7 +282,7 @@
             event.preventDefault();
         }
 
-        // Check browser 
+        // Check browser
         function Browser() {
             var browser = {
                 msie : false,
