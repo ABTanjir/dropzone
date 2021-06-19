@@ -162,7 +162,8 @@
 
         function start_upload(file_reader) {
             var form_data = new FormData();
-            var _token = $(this).attr('_token');
+            var _token = plugin.input.attr('_token');
+
             if(typeof _token !== 'undefined' && _token !== false){
                 form_data.append('_token', _token);
             }
