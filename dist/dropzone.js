@@ -80,6 +80,7 @@
                 'background-size': '100%',
                 'background-position': '50%',
                 'text-align': 'center',
+                'background-repeat': 'no-repeat',
                 '-webkit-transition': 'all 0.3s ease-out',
                 '-moz-transition': 'all 0.3s ease-out',
                 '-ms-transition': 'all 0.3s ease-out',
