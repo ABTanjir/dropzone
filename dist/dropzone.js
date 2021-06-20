@@ -77,7 +77,7 @@
                 'width': plugin.options.width,
                 'height':  plugin.options.height,
                 'position': 'relative',
-                'background-size': 'cover',
+                'background-size': '100%',
                 'background-position': '50%',
                 'text-align': 'center',
                 '-webkit-transition': 'all 0.3s ease-out',
